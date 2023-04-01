@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+.categories 
+{
+    display:flex;
+    flex-direction: column;}
+ .categories  a{
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(0, 60, 255);
+    margin-bottom: 10px;
+    color: white;
+    padding: 3px 15px;
+}
+.categories a:hover{
+    background-color:rgb(7, 35, 145);
+    box-shadow: 0 2px 5px -2px black;
+}

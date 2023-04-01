@@ -1,0 +1,26 @@
+body{
+    align-items: center;
+    justify-content: center;
+}
+.board{
+    max-width:600px;
+    min-width:365px;
+    min-height:365px;
+    max-height:600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cell{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex: 0 0 32%;
+}
+.cell:nth-child(3n+2){
+    border-left-style:solid;
+    border-right-style:solid;
+}
+.cell:nth-child(n+4):nth-child(-n+6){
+    border-top-style:solid;
+    border-bottom-style:solid;
+}

@@ -25,6 +25,7 @@ function greeting (txtName){
   (typeof txtName === 'string')? tempName = "Hello " + txtName + "!" :tempName = "Hello!";
   return tempName;
 } 
+
 /*****************************/
 //2. Do You Play the Theremin*/
 /*****************************/

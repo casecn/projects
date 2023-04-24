@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap');
+
+html
+{
+background-color: #fcffe7;
+font-family: 'Lexend Deca', sans-serif;
+}
+
+#grid
+{
+    width: 100%;
+    height: 100%;
+}
+
+
+#main 
+{
+    position: relative;
+    width: 95%;
+    height: 95%;
+    flex-wrap: nowrap;
+    align-content: space-between;
+    background-color: rgb(243, 169, 9);
+}
+ .mark
+ {
+    position:absolute;
+    
+    width: 10%;
+    height: 10%;
+    
+ }
+ #x_r1c1
+{
+    top: 15%;
+    left: 18%;
+}
+ #x_r1c2
+{
+    top: 15%;
+    left: 44%;
+}
+ #x_r1c3
+{
+    top: 15%;
+    left: 66%;
+}
+#x_r2c1
+{
+    top: 40%;
+    left: 17%;
+}
+ #x_r2c2
+{
+    top: 40%;
+    left: 42%;
+}
+ #x_r2c3
+{
+    top: 40%;
+    left: 66%;
+}
+
+#x_r3c1
+{
+    top: 68%;
+    left: 15%;
+}
+ #x_r3c2
+{
+    top: 68%;
+    left: 40%;
+}
+ #x_r3c3
+{
+    top: 68%;
+    left: 66%;
+}
+/* Layout "O's" */
+ #o_r1c1
+{
+    top: 15%;
+    left: 18%;
+}
+ #o_r1c2
+{
+    top: 15%;
+    left: 44%;
+}
+ #o_r1c3
+{
+    top: 15%;
+    left: 66%;
+}
+#o_r2c1
+{
+    top: 40%;
+    left: 17%;
+}
+ #o_r2c2
+{
+    top: 40%;
+    left: 42%;
+}
+ #o_r2c3
+{
+    top: 40%;
+    left: 66%;
+}
+
+#o_r3c1
+{
+    top: 68%;
+    left: 15%;
+}
+ #o_r3c2
+{
+    top: 68%;
+    left: 40%;
+}
+ #o_r3c3
+{
+    top: 68%;
+    left: 66%;
+}
+
+.row
+{
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    width: 100%;
+    height: 33%;
+}
+#row1 
+{
+    border-color: yellow;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+}
+#row2 
+{
+    border-color: red;
+    position: absolute;
+    left: 0;
+    top: 260px;
+    height: 25%;
+    
+}
+#XR2C2
+{
+    left: 45%;
+    top: 40%;
+}
+#row3
+{
+    border-color: green;
+    position: absolute;
+    left: 0;
+    top: 532px;
+}
+.column
+{
+    
+    flex-wrap: nowrap;
+    border: solid;
+    width: 266px;
+    height: 266px;
+}

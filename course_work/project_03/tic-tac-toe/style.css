@@ -10,22 +10,22 @@ font-family: 'Lexend Deca', sans-serif;
 {
     width: 100%;
     height: 100%;
+    border: 2px solid black;
 }
 
 
 #main 
 {
-    position: relative;
-    width: 95%;
-    height: 95%;
-    flex-wrap: nowrap;
-    align-content: space-between;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 5%;
+    left: 10%;
     background-color: rgb(243, 169, 9);
 }
  .mark
  {
     position:absolute;
-    
     width: 10%;
     height: 10%;
     
@@ -124,44 +124,106 @@ font-family: 'Lexend Deca', sans-serif;
     left: 66%;
 }
 
+.click_div
+{
+   
+    
+    height: 100%;
+    border: solid;
+    border-color: black;
+ }
+ 
 .row
 {
-    display: flex;
-    justify-content: center;
+    border: solid;
+    position: absolute;
+        display: flex;
+    justify-content: space-between;
+    /* display: flex;
+    justify-content: center; */
     gap: 0;
-    width: 100%;
-    height: 33%;
+    width: 75%;
+    height: 23%;
+    left: 10%;
 }
 #row1 
 {
-    border-color: yellow;
-
-    position: absolute;
-    left: 0;
-    top: 0;
+    
+    
+    border-color: blue;
+    top: 8%;
     
 }
+#R1C1
+ {
+    background-color: blueviolet; 
+    width: 31%;
+    height: 100%;
+ }
+ #R1C2
+ {
+    background-color: rgb(226, 43, 61); 
+    width:32%;
+ }
+ #R1C3
+ {
+    background-color: rgb(89, 226, 43); 
+    width:32%;
+ }
+ 
+
 #row2 
 {
     border-color: red;
     position: absolute;
-    left: 0;
-    top: 260px;
+    top: 32%;
     height: 25%;
     
 }
-#XR2C2
-{
-    left: 45%;
-    top: 40%;
-}
-#row3
+#R2C1
+ {
+    background-color: blueviolet; 
+    width: 31%;
+    height: 100%;
+ }
+ #R2C2
+ {
+    background-color: rgb(226, 43, 61); 
+    width:32%;
+ }
+ #R2C3
+ {
+    background-color: rgb(89, 226, 43); 
+    width:32%;
+ }
+
+
+ #row3
 {
     border-color: green;
-    position: absolute;
-    left: 0;
-    top: 532px;
+    top: 59%;
+    left: 8%;
+    height: 28%
 }
+
+ #R3C1
+ {
+    background-color: blueviolet; 
+    width: 31%;
+    height: 100%;
+ }
+ #R3C2
+ {
+    background-color: rgb(226, 43, 61); 
+    width:30%;
+    border-radius: 5px;
+ }
+ #R3C3
+ {
+    background-color: rgb(89, 226, 43); 
+    width:32%;
+ }
+
 .column
 {
     

@@ -28,6 +28,7 @@ font-family: 'Lexend Deca', sans-serif;
     position:absolute;
     width: 10%;
     height: 10%;
+    z-index: 1;
     
  }
  #x_r1c1
@@ -126,8 +127,6 @@ font-family: 'Lexend Deca', sans-serif;
 
 .click_div
 {
-   
-    
     height: 100%;
     border: solid;
     border-color: black;
@@ -148,15 +147,12 @@ font-family: 'Lexend Deca', sans-serif;
 }
 #row1 
 {
-    
-    
     border-color: blue;
     top: 8%;
-    
 }
 #R1C1
  {
-    background-color: blueviolet; 
+    /* background-color: blueviolet;  */
     width: 31%;
     height: 100%;
  }
@@ -170,15 +166,12 @@ font-family: 'Lexend Deca', sans-serif;
     background-color: rgb(89, 226, 43); 
     width:32%;
  }
- 
-
 #row2 
 {
     border-color: red;
     position: absolute;
     top: 32%;
     height: 25%;
-    
 }
 #R2C1
  {
@@ -196,8 +189,6 @@ font-family: 'Lexend Deca', sans-serif;
     background-color: rgb(89, 226, 43); 
     width:32%;
  }
-
-
  #row3
 {
     border-color: green;
@@ -205,7 +196,6 @@ font-family: 'Lexend Deca', sans-serif;
     left: 8%;
     height: 28%
 }
-
  #R3C1
  {
     background-color: blueviolet; 
@@ -223,10 +213,8 @@ font-family: 'Lexend Deca', sans-serif;
     background-color: rgb(89, 226, 43); 
     width:32%;
  }
-
 .column
-{
-    
+{  
     flex-wrap: nowrap;
     border: solid;
     width: 266px;

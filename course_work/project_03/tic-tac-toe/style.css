@@ -144,7 +144,7 @@ font-family: 'Lexend Deca', sans-serif;
 {
     border: solid;
     position: absolute;
-        display: flex;
+    display: flex;
     justify-content: space-between;
     /* display: flex;
     justify-content: center; */
@@ -181,50 +181,42 @@ font-family: 'Lexend Deca', sans-serif;
     top: 32%;
     height: 25%;
 }
-#r2c1
- {
+#r2c1 {
     /* background-color: blueviolet;  */
     width: 31%;
     height: 100%;
  }
- #r2c2
- {
+ #r2c2 {
     /* background-color: rgb(226, 43, 61);  */
     width:32%;
  }
- #r2c3
- {
+ #r2c3{
     /* background-color: rgb(89, 226, 43);  */
     width:32%;
  }
- #row3
-{
+ #row3{
     /* border-color: green; */
     top: 59%;
     left: 8%;
     height: 28%
 }
- #r3c1
- {
+ #r3c1 {
     /* background-color: blueviolet;  */
     width: 31%;
     height: 100%;
  }
- #r3c2
- {
+ #r3c2{
     /* background-color: rgb(226, 43, 61);  */
     width:30%;
     border-radius: 5px;
  }
- #r3c3
- {
+ #r3c3{
     /* background-color: rgb(89, 226, 43);  */
     width:32%;
  }
-.column
-{  
+.column{  
     flex-wrap: nowrap;
-    border: solid;
+    /* border: solid; */
     width: 266px;
     height: 266px;
 }

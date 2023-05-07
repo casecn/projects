@@ -8,21 +8,16 @@ const gameState = {
     ]
 }
 const xStats = {
-    xWins: 0,
-    xBoard: [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null]
-    ]
+    turns: 0,
+    wins: 0,
+    xBoard: [null, null, null, null, null, null, null, null, null]
 };
 const oStats = {
-    oWins: 0,
-    oBoard: [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null]
-    ]
+    turns: 0,
+    wins: 0,
+    oBoard: [null, null, null, null, null, null, null, null, null]
 };
+
   let counter = 0;
   const startToken = 'x';
   const secondToken = 'o';
@@ -42,10 +37,12 @@ newGameBtn.addEventListener("click", function(event){resetGame(event)})
 // ********** Functions *********************/
 
 function processClick(event){
-    const target = event.target;
+    const target = event.target
+    //console.log(target.dataset.index)
     if (event.srcElement.className ==="click_div"){
         let divID = target.id;
         let token = gameState.players[0];
+        let divIndex = target.dataset.index
 
         // - determine row and column
         let row = divID.substr(1, 1)-1;
@@ -56,19 +53,9 @@ function processClick(event){
         if (currentCellValue === null)
         {
             changeToken(); //set token
-            gameState.board[row][column] = token; //update gameState.board
-            
-            addXOrY(target.id, token); //add token to board
-            
-            (token === "x")? xStats.xBoard[row][column]="x": oStats.oBoard[row][column]="o"; //Update token array.
-
-            //look for winner
-
-            // Switch token
-        
-            //gameState.players[1] = token;    
-        // - counter %2 if even x . . . 
-        // - switch gameState.players
+            displayXOrY(target.id, token); //add token to board
+            recordMove(token, divIndex)
+            checkForWinner(token) //look for winner
 
             counter++; // count cycles.  even are 'o' and odd are 'x'
         }
@@ -76,8 +63,7 @@ function processClick(event){
 }
 
 //########################## Reset Game Functions #################//
-function resetGame() 
-{console.log(gameState.board)
+function resetGame(){
     clearBoard() // Clear marks off board.
     clearStatBoards() // reset gameState.board to null.
 
@@ -106,7 +92,7 @@ function clearBoard(){
 }
 
 //################## Update State Functions #########################//
-function addXOrY(divTarget, type) {
+function displayXOrY(divTarget, type) {
     const img = document.createElement("img");
 
     if (type === "x")
@@ -117,6 +103,9 @@ function addXOrY(divTarget, type) {
     img.id = type + "_"+ divTarget;
     img.className = "mark"
     document.getElementById("main").appendChild(img);
+}
+function recordMove(token, divIndex){
+    (token === "x")? xStats.xBoard[divIndex]=1: oStats.oBoard[divIndex]=1; //Update token array.
 }
 
 function changeToken(){
@@ -135,10 +124,63 @@ function changeToken(){
 }
 
 //################## Check for winner functions #########################//
-
 //wrap all winnder functions in a wrapper function to be called in the main loop.
+// winning combo arrays
+const winningScenarios = {
+    row1: [1, 1, 1, null, null, null, null, null, null],
+    row2: [null, null, null, 1, 1, 1, null, null, null],
+    row3: [null, null, null, null, null, null, 1, 1, 1],
+    col1: [1, null, null, 1, null, null, 1, null, null],
+    col2: [null, 1, null, null, 1, null, null, 1, null],
+    col3: [null, null, 1, null, null, 1, null, null, 1],
+    crossDirection1: [1, null, null, null, 1, null, null, null, 1],
+    crossDirection2: [null, null, 1, null, 1, null, 1, null, null]
+}
 
+function checkForWinner(token)
+{
+    //use counter for each token.  If < 3 then don't check.
+    let winArray = []
+    if (token === "x"){
+        winArray = xStats.xBoard
+    }
+    else{
+        winArray = oStats.oBoard;
+    }
+    
+    if (!(winArray.turns < 3)){
+        let sumArray = [];
+        sumArray[0] = winArray.slice(0, 3); // Sum of Row 1
+        sumArray[1] = winArray.slice(3, 6);// Sum of Row 2
+        sumArray[2] = winArray.slice(6, 9);// Sum of Row 3
+        sumArray[3]= [winArray[0], winArray[3], winArray[6]]; // Sum of Column 1
+        sumArray[4]= [winArray[1], winArray[4], winArray[7]]; // Sum of Column 2
+        sumArray[5]= [winArray[2], winArray[5], winArray[8]]; // Sum of Column 3
+        sumArray[6]= [winArray[0], winArray[4], winArray[8]]; // Sum of Diagonal 1
+        sumArray[7]= [winArray[3], winArray[4], winArray[7]]; // Sum of Diagonal 2
+        
+        //Iterate through sumArray and sum each array within.  If >= 3 then winner.
+        for (let i=0; i < sumArray.length; i++){
+            let winningSum = sumArray[i].reduce((numSum, arrayValue) => {
+                                return numSum + arrayValue;
+                            },0);
+            if (winningSum ===3){
+                window.alert(`${token} Wins!`)
+            }
+            
+        }
+        //use array.prototype.reduce(slice(0 , 2)) to sum each row.  If = 3, then winner.
+    }
+    //test for column and diagonal wins.  extract values of each column or diagonal to see if they sum to 3
+    //If winner, then instantiate winner function
+}
 
+function winner (token){
+    //increment token wins element (oStat.wins or xStats.wins)
+
+    //display message
+    //clear board.
+}
 //convert array to string
 
 //compar strings against winning combination strings

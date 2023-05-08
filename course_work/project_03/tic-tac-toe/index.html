@@ -9,29 +9,37 @@
     <script defer type="text/javascript" src="app.js"></script>
 </head>
 <body>
-    <div id="main">
-        <img id="grid" src="tic-tac-toe_grid.png" alt="tic-tac-toe grid">
+        <h1>Tic-Tac-Toe</h1>
         <div id="buttonDiv">
             <button id = "newGame">New Game</button>
         </div>
-        <!-- Laying out divs so I can capture a click event in the div. -->
-
-         <div class = "row" id = "row1">
-            <div data-index = "0" class = "click_div" id = "r1c1"></div>
-            <div data-index = "1" class = "click_div" id = "r1c2"></div>
-            <div data-index = "2" class = "click_div" id = "r1c3"></div>
+            <!-- Laying out divs so I can capture a click event in the div. -->
+        <div id="main">
+            <img id="grid" src="tic-tac-toe_grid.png" alt="tic-tac-toe grid">
+            <div class = "row" id = "row1">
+                <div data-index = "0" class = "click_div" id = "r1c1"></div>
+                <div data-index = "1" class = "click_div" id = "r1c2"></div>
+                <div data-index = "2" class = "click_div" id = "r1c3"></div>
+            </div>
+            <div class = "row" id = "row2">
+                <div data-index = "3" class = "click_div" id = "r2c1"></div>
+                <div data-index = "4" class = "click_div" id = "r2c2"></div>
+                <div data-index = "5" class = "click_div" id = "r2c3"></div>
+            </div>
+            <div class = " row" id = "row3">
+                <div data-index = "6" class = "click_div" id = "r3c1"></div>
+                <div data-index = "7" class = "click_div" id = "r3c2"></div>
+                <div data-index = "8" class = "click_div" id = "r3c3"></div>   
+            </div>
         </div>
-        <div class = "row" id = "row2">
-            <div data-index = "3" class = "click_div" id = "r2c1"></div>
-            <div data-index = "4" class = "click_div" id = "r2c2"></div>
-            <div data-index = "5" class = "click_div" id = "r2c3"></div>
+    <section class="modal hidden" id = "message">
+        
+        <div class="message">
+            <p id = "winner_text">Winner</p>
         </div>
-        <div class = " row" id = "row3">
-            <div data-index = "6" class = "click_div" id = "r3c1"></div>
-            <div data-index = "7" class = "click_div" id = "r3c2"></div>
-            <div data-index = "8" class = "click_div" id = "r3c3"></div>   
-        </div>
-    </div>
+        <button class="btn" id = clearBtn>New Game</button>
+    </section> 
+    <div class="overlay hidden"></div>   
     
 </body>
 </html>

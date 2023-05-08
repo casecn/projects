@@ -2,34 +2,52 @@
 
 html
 {
-background-color: #fcffe7;
-font-family: 'Lexend Deca', sans-serif;
+    background-color: #fdfcef;
+    font-family: 'Lexend Deca', sans-serif;
+    height: 100%;
 }
 
+h1 {
+    color:black;
+    position: absolute;
+    top:0%;
+}
+
+body {
+  /* border: solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  
+}
 #grid
 {
     width: 100%;
     aspect-ratio: 1/1;
-    border: 2px solid black;
+    
 }
-
-
 #main 
 {
+    border: 2px solid black;
     position: absolute;
-    width: 95%;
+    width: 80%;
     aspect-ratio: 1/1;
-    top: 5%;
+    top: 20%;
     left: 10%;
-    background-color: rgb(123, 239, 27);
+    background-color: rgb(219, 229, 251);
 }
 #buttonDiv 
 {
-    /* border-color: blue; */
-    top: 0%;
+    background-color: black;
+    border: 2px solid black;
+    top: 15%;
     position:absolute;
-    width: 100%;
-    height: 8%;
+    width: 80%;
+    left: 10%;
+    height: 5%;
 }
  .mark
  {
@@ -37,126 +55,74 @@ font-family: 'Lexend Deca', sans-serif;
     width: 10%;
     height: 10%;
     z-index: 1;
-    
  }
- #x_r1c1
+ #x_r1c1, #o_r1c1
 {
     top: 15%;
-    left: 18%;
+    left: 13%;
 }
- #x_r1c2
+ #x_r1c2, #o_r1c2
 {
     top: 15%;
-    left: 44%;
+    left: 38%;
 }
- #x_r1c3
-{
-    top: 15%;
-    left: 66%;
-}
-#x_r2c1
-{
-    top: 40%;
-    left: 17%;
-}
- #x_r2c2
-{
-    top: 40%;
-    left: 42%;
-}
- #x_r2c3
-{
-    top: 40%;
-    left: 66%;
-}
-
-#x_r3c1
-{
-    top: 68%;
-    left: 15%;
-}
- #x_r3c2
-{
-    top: 68%;
-    left: 40%;
-}
- #x_r3c3
-{
-    top: 68%;
-    left: 66%;
-}
-/* Layout "O's" */
- #o_r1c1
-{
-    top: 15%;
-    left: 18%;
-}
- #o_r1c2
-{
-    top: 15%;
-    left: 44%;
-}
- #o_r1c3
+ #x_r1c3, #o_r1c3
 {
     top: 15%;
     left: 66%;
 }
-#o_r2c1
+#x_r2c1, #o_r2c1
 {
-    top: 40%;
-    left: 17%;
+    top: 41%;
+    left: 12%;
 }
- #o_r2c2
+ #x_r2c2, #o_r2c2
 {
-    top: 40%;
-    left: 42%;
+    top: 41%;
+    left: 38%;
 }
- #o_r2c3
+ #x_r2c3, #o_r2c3
 {
-    top: 40%;
+    top: 41%;
     left: 66%;
 }
-
-#o_r3c1
+#x_r3c1, #o_r3c1
 {
-    top: 68%;
-    left: 15%;
+    top: 72%;
+    left: 11%;
 }
- #o_r3c2
+ #x_r3c2, #o_r3c2
 {
-    top: 68%;
-    left: 40%;
+    top: 72%;
+    left: 35%;
 }
- #o_r3c3
+ #x_r3c3, #o_r3c3
 {
-    top: 68%;
-    left: 66%;
+    top: 72%;
+    left: 64%;
 }
 
 .click_div
 {
     height: 100%;
-    border: solid;
-    border-color: black;
+    /* border: solid;
+    border-color: black; */
  }
- 
-.row
+ .row
 {
-    border: solid;
+    /* border: solid; */
     position: absolute;
     display: flex;
     justify-content: space-between;
-    /* display: flex;
-    justify-content: center; */
     gap: 0;
-    width: 75%;
+    width: 77%;
     height: 23%;
-    left: 10%;
+    left: 5%;
 }
 #row1 
 {
     /* border-color: blue; */
-    top: 8%;
+    top: 7%;
 }
 #r1c1
  {
@@ -179,7 +145,7 @@ font-family: 'Lexend Deca', sans-serif;
     /* border-color: red; */
     position: absolute;
     top: 32%;
-    height: 25%;
+    height: 28%;
 }
 #r2c1 {
     /* background-color: blueviolet;  */
@@ -196,8 +162,8 @@ font-family: 'Lexend Deca', sans-serif;
  }
  #row3{
     /* border-color: green; */
-    top: 59%;
-    left: 8%;
+    top: 63%;
+    left: 2%;
     height: 28%
 }
  #r3c1 {
@@ -219,4 +185,46 @@ font-family: 'Lexend Deca', sans-serif;
     /* border: solid; */
     width: 266px;
     height: 266px;
+}
+/**************** Modal Message *******************/
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+  width: 50%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  padding: 1.3rem;
+  height: 25%;
+  min-height: 25%;
+  z-index: 1; 
+}
+
+ .hidden {
+    display: none;
+} 
+
+.message{
+    text-align: center;
+    margin: 0.4rem 0 0.2rem;
+    font-size: 1rem;
+    color: #777;
+    margin: 0.4rem 0 0.2rem;
+    font-weight: 700;
+}
+.btn {
+    width: 65%;
+    display: inline-block;
+    padding: 0.5rem 0.1rem;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
 }

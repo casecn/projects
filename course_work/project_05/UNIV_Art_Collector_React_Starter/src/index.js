@@ -36,13 +36,13 @@ return <div className="app">
 
     {/* <Preview /> needs props for searchResults, setIsLoading and setSearchResults (clicking prev/next buttons), and setFeaturedResult (clicking a preview) */}
 
-    <Preview />
+    <Preview searchResults={searchResults} setIsLoading={setIsLoading} setSearchResults={setSearchResults} setFeaturedResults={setFeaturedResult}/>
 
     {/* <Feature /> needs props for featuredResult, as well as setIsLoading and setSearchResults (clicking on searchable properties) */}
     
     {/* <Feature /> */}
 
-    {/* <Loading /> is static, but should only render when isLoading is true */}
+    <Loading isLoading ={isLoading} />
         
     {/* use a ternary and render null if isLoading is false */}
     

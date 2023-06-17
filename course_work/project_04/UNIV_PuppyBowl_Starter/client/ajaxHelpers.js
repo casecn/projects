@@ -10,7 +10,6 @@ export const fetchAllPlayers = async () => {
     try {
         const response = await fetch (apiURL);
         const jsonData = await response.json();
-        
         if(jsonData.error){
             throw jsonData.error;
         }

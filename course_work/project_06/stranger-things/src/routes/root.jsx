@@ -1,0 +1,43 @@
+import { Outlet, Link } from "react-router-dom"
+const Root = () => {
+  return (
+    <>
+      <div id="sidebar">
+        <h1 id="title">Stranger&apos;s Things</h1>
+        <div>
+          <form id="search-form" role="search">
+            <input
+              id="q"
+              aria-label="Search contacts"
+              placeholder="Search"
+              type="search"
+              name="q"
+            />
+            <div id="search-spinner" aria-hidden hidden={true} />
+            <div className="sr-only" aria-live="polite"></div>
+          </form>
+          <form method="post">
+            <button type="submit">New</button>
+          </form>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <Link to={`/things`}>All Posts</Link>
+            </li>
+            <li>
+              <Link to={`/login`}>Log in</Link>
+            </li>
+            <li>
+              <Link to={`/register`}>Register New User</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="detail">
+        <Outlet />
+      </div>
+    </>
+  );
+}
+export default Root;

@@ -2,22 +2,30 @@ import { useState } from "react";
 import {  Link } from "react-router-dom";
 import { loginEndpoint } from "../api";
 
+
+
+function setKey ( key ) {
+
+
+}
 const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-
-    const handleUserChange = (e) => {
-        setUserName(e.target.value);
+  //console.log(process.env.VITE_LOGIN_KEY);
+    const handleUserChange = (event) => {
+        setUserName(event.target.value);
         console.log(userName);
     };
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
+    const handlePasswordChange = (event) => {
+        setPassword(event.target.value);
         console.log(password)
     }
 
-    const handleSubmitButton = async () => {
+    const handleSubmitButton = async (props) => {
+      
+      console.log(props);
         try{
-        const newToken = await loginEndpoint()
+        const newToken = await loginEndpoint(userName, password)
         console.log(`newToken`, newToken);
         } catch(err){
             console.error(err)

@@ -20,7 +20,32 @@ export const retrieveAllPosts = async () => {
         }
 }
 
-export const loginEndpoint = async () =>{
+export const loginEndpoint = async (userName, passWord) =>{
+    console.log({userName, Line: 24})
+    console.log({passWord, Line: 25})
+    let apiURL = `${BASE_URL}/users/login`;
+    try {
+      const response = await fetch(apiURL, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: {
+            username: 'superman27',//userName,//
+            password: 'krypt0n0rbust'//passWord
+          }
+        })
+      });
+      const result = await response.json();
+      const token = result.data.token;
+      return token
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+export const registerEndpoint = async () =>{
     let apiURL = `${BASE_URL}/users/login`;
     try {
       const response = await fetch(apiURL, {
@@ -42,4 +67,3 @@ export const loginEndpoint = async () =>{
       console.error(err);
     }
   }
-

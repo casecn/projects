@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { loginEndpoint } from "../api";
+import { registerEndpoint } from "../api";
 
 const Register = () => {
   const [userName, setUserName] = useState("");
@@ -17,7 +17,7 @@ const Register = () => {
 
   const handleSubmitButton = async () => {
     try {
-      const newToken = await loginEndpoint();
+      const newToken = await registerEndpoint();
       console.log(`newToken`, newToken);
     } catch (err) {
       console.error(err);

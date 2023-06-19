@@ -6,8 +6,8 @@ const Things = () => {
     //const [loading, setLoading] = useState(true);
     const [posting, setPosting] = useState([]);
     let y = loginEndpoint();
-    let x = `last Log: ${y}`
-    console.log(x);
+    // let x = `last Log: ${y}`
+    // console.log(x);
     useEffect(()=>{
         const posts = async () => {
         const allPosts = await retrieveAllPosts()

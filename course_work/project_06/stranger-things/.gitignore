@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# api Keys
+/.env
+
+#files
+../../../scatch/
+../../exercises/
+../../../personal/
+../../../pixelate_amber/
